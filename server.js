@@ -25,6 +25,14 @@ dotenv.config({
   path: "./.env",
 });
 
+
+app.use(
+  basicAuth({
+    challenge: true,
+    users: { puma: '2021' },
+  })
+);
+
 // Adyen Node.js API library boilerplate (configuration, etc.)
 const config = new Config();
 config.apiKey = process.env.API_KEY;
