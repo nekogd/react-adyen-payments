@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require('cors')
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const { uuid } = require("uuidv4");
@@ -7,6 +8,8 @@ const { Client, Config, CheckoutAPI, Modification, hmacValidator } = require("@a
 
 // init app
 const app = express();
+
+app.use(cors())
 // setup request logging
 app.use(morgan("dev"));
 // Parse JSON bodies
