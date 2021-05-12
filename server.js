@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const { uuid } = require("uuidv4");
 const { Client, Config, CheckoutAPI, Modification, hmacValidator } = require("@adyen/api-library");
+
 // init app
 const app = express();
 // setup request logging
