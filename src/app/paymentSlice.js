@@ -71,14 +71,14 @@ export const slice = createSlice({
 export const { paymentMethods, payments, paymentDetails, paymentDataStore } = slice.actions;
 
 export const getPaymentMethods = () => async (dispatch) => {
-  const response = await fetch("/api/getPaymentMethods", {
+  const response = await fetch("http://react-adyen-payments.herokuapp.com/api/getPaymentMethods", {
     method: "POST",
   });
   dispatch(paymentMethods([await response.json(), response.status]));
 };
 
 export const initiatePayment = (data) => async (dispatch) => {
-  const response = await fetch("/api/initiatePayment", {
+  const response = await fetch("http://react-adyen-payments.herokuapp.com/api/initiatePayment", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -89,7 +89,7 @@ export const initiatePayment = (data) => async (dispatch) => {
 };
 
 export const submitAdditionalDetails = (data, orderRef) => async (dispatch) => {
-  const response = await fetch(`/api/submitAdditionalDetails?orderRef=${orderRef}`, {
+  const response = await fetch(`http://react-adyen-payments.herokuapp.com/api/submitAdditionalDetails?orderRef=${orderRef}`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
