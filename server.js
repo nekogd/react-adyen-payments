@@ -40,6 +40,8 @@ const originStore = {};
 /* ################# API ENDPOINTS ###################### */
 app.get("/api/getPaymentDataStore", async (req, res) => res.json(paymentStore));
 
+app.get("/api/test", async (req, res) => res.send("puma"));
+
 // Get payment methods
 app.post("/api/getPaymentMethods", async (req, res) => {
   try {
