@@ -3,6 +3,7 @@ const path = require("path");
 const cors = require('cors')
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const basicAuth = require('express-basic-auth');
 const { uuid } = require("uuidv4");
 const { Client, Config, CheckoutAPI, Modification, hmacValidator } = require("@adyen/api-library");
 
